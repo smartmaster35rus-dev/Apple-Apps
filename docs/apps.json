@@ -1,0 +1,127 @@
+{
+  "repo": "smartmaster35rus-dev/Apple-Apps",
+  "release": "ipa",
+  "base_url": "https://github.com/smartmaster35rus-dev/Apple-Apps/releases/download/ipa",
+  "pages_url": "https://smartmaster35rus-dev.github.io/Apple-Apps/",
+  "store_url": "https://smartmaster35rus-activator.ru/app-install/sideload",
+  "contact": {
+    "phone": "+7 999 988-81-58",
+    "telegram": "https://t.me/SmartMaster35Rus",
+    "address": "Вологда, Осановский проезд 33"
+  },
+  "apps": [
+    {
+      "id": "sberbank",
+      "name": "СберБанк Онлайн",
+      "summary": "Основное приложение СберБанка для платежей, переводов и управления счетами.",
+      "version": "17.6.1",
+      "min_ios": "14.0",
+      "bundle_id": "com.inv.gen.",
+      "file": "Sberbank-Online_v17.6.1.ipa",
+      "icon": "sberbank.png",
+      "category": "Банки",
+      "featured": true
+    },
+    {
+      "id": "t-bank",
+      "name": "Т-Банк",
+      "summary": "Мобильный банк Т-Банка: карты, платежи, инвестиции и повседневные операции.",
+      "version": "7.13.1",
+      "min_ios": "14.0",
+      "bundle_id": "com.linked.scan.app",
+      "file": "T-Bank_v7.13.1.ipa",
+      "icon": "t-bank.png",
+      "category": "Банки",
+      "featured": true
+    },
+    {
+      "id": "vtb-sirius",
+      "name": "ВТБ (Сириус)",
+      "summary": "Приложение ВТБ для клиентов банка: переводы, оплата услуг и обслуживание продуктов.",
+      "version": "2.0.1",
+      "min_ios": "16.0",
+      "bundle_id": "com.sm.FlowTime",
+      "file": "Sirius-VTB_v2.0.1.ipa",
+      "icon": "sirius-vtb.png",
+      "category": "Банки"
+    },
+    {
+      "id": "alfa-a-kluch",
+      "name": "Альфа-Банк (А-Ключ)",
+      "summary": "Официальное приложение Альфа-Банка для iPhone с доступом к счетам и операциям.",
+      "version": "2.0.0",
+      "min_ios": "14.0",
+      "bundle_id": "com.kluchapp.prod",
+      "file": "Alfa-Bank-A-Kluch_v2.0.0.ipa",
+      "icon": "alfa-a-kluch.png",
+      "category": "Банки",
+      "featured": true
+    },
+    {
+      "id": "gazprombank",
+      "name": "Газпромбанк",
+      "summary": "Мобильный банк Газпромбанка: карты, кредиты, вклады и платежи в одном приложении.",
+      "version": "5.6.0",
+      "min_ios": "14.0",
+      "bundle_id": "ru.to.the.top.story.prod",
+      "file": "Gazprombank_v5.6.0.ipa",
+      "icon": "gazprombank.png",
+      "category": "Банки"
+    },
+    {
+      "id": "yandex-bank",
+      "name": "Яндекс Банк",
+      "summary": "Банковские сервисы Яндекса: счета, карты и платежи с привычным интерфейсом экосистемы.",
+      "version": "0.234.4",
+      "min_ios": "14.0",
+      "bundle_id": "com.yandex.fintech.bank-app1",
+      "file": "Yandex-Bank_v0.234.4.ipa",
+      "icon": "yandex-bank.png",
+      "category": "Банки"
+    },
+    {
+      "id": "yoomoney",
+      "name": "ЮMoney",
+      "summary": "Кошелёк и платежи ЮMoney: переводы, оплата покупок и управление балансом.",
+      "version": "11.12.0",
+      "min_ios": "14.0",
+      "bundle_id": "ru.yoo.money",
+      "file": "YooMoney_v11.12.0.ipa",
+      "icon": "yoomoney.png",
+      "category": "Финансы"
+    },
+    {
+      "id": "mts-bank",
+      "name": "МТС Банк",
+      "summary": "Банковское приложение МТС Банка для ежедневных финансовых операций.",
+      "version": "11.0.0",
+      "min_ios": "14.0",
+      "bundle_id": "fivecoins.appstore",
+      "file": "MTS-Bank_v11.0.0.ipa",
+      "icon": "mts-bank.png",
+      "category": "Банки"
+    },
+    {
+      "id": "sovcombank",
+      "name": "Совкомбанк",
+      "summary": "Мобильный банк Совкомбанка: карты, кредиты, платежи и личный кабинет клиента.",
+      "version": "1.1.1",
+      "min_ios": "14.0",
+      "bundle_id": "ru.smrtbudget",
+      "file": "Sovcombank_v1.1.1.ipa",
+      "icon": "sovcombank.png",
+      "category": "Банки"
+    },
+    {
+      "id": "rosselkhozbank",
+      "name": "Россельхозбанк",
+      "summary": "Официальное приложение Россельхозбанка для управления счетами и платежами.",
+      "version": "1.0.7",
+      "min_ios": "14.0",
+      "bundle_id": "com.berries.volfest.berriesVolfest",
+      "file": "Rosselkhozbank_v1.0.7.ipa",
+      "icon": "rosselkhozbank.png",
+      "category": "Банки"
+    }
+  ]
+}

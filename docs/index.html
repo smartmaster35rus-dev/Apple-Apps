@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Apple Apps — SmartMaster</title>
+<meta name="description" content="Библиотека IPA SmartMaster: банки и приложения для TrollStore, Sideloadly, AltServer и Scarlet.">
+<meta property="og:title" content="Apple Apps — SmartMaster">
+<meta property="og:description" content="App Store-витрина IPA. Файлы в GitHub Releases.">
+<meta property="og:image" content="og.jpg">
+<link rel="stylesheet" href="appstore.css">
+</head>
+<body class="as-body">
+<main class="as-app">
+  <div id="page-today" class="as-page">
+    <header class="as-header">
+      <div class="as-header-top">
+        <div>
+          <p class="as-date" id="todayDate">Today</p>
+          <h1>Сегодня</h1>
+        </div>
+        <a class="as-avatar" href="https://smartmaster35rus.ru/" aria-label="SmartMaster">SM</a>
+      </div>
+    </header>
+    <div class="as-scroll">
+      <article class="as-gh-hero">
+        <img src="og.jpg" alt="Apple Apps">
+      </article>
+      <p class="as-muted">IPA для TrollStore, Sideloadly, AltServer и Scarlet. Файлы лежат в GitHub Releases, не в git.</p>
+      <p class="as-gh-note" id="releaseNote"><b>Релиз <code>ipa</code>.</b> Пока архив не загружен, кнопка GET ведёт на страницу релиза — после загрузки файлов скачивание заработает само.</p>
+      <button type="button" class="as-story" id="storyFeatured" hidden>
+        <div class="as-story-kicker">Featured</div>
+        <h2 id="storyTitle">Банки</h2>
+        <p id="storyText">Приложения, которые чаще всего ставят после обхода App Store.</p>
+        <div class="as-story-art banks">
+          <div class="as-story-bar">
+            <span class="as-icon" id="storyIcon"></span>
+            <span><b id="storyName">—</b><span id="storyMeta">IPA</span></span>
+            <a class="as-get" id="storyGet" href="#" rel="noopener">GET</a>
+          </div>
+        </div>
+      </button>
+      <div class="as-section">
+        <div class="as-section-head"><h2>Топ</h2><button type="button" class="as-see" data-go="apps">Все</button></div>
+        <div class="as-hscroll" id="featuredRow"></div>
+      </div>
+      <div class="as-section">
+        <div class="as-section-head"><h2>Как ставить</h2></div>
+        <div class="as-list inset">
+          <div class="as-textrow"><b>TrollStore</b><span>Прямая установка IPA, если iOS поддерживается.</span></div>
+          <div class="as-textrow"><b>Sideloadly / AltServer</b><span>Через Apple ID на компьютере, на 7 дней.</span></div>
+          <div class="as-textrow"><b>Scarlet / ESign</b><span>С iPhone, если есть сертификат.</span></div>
+        </div>
+      </div>
+      <div class="as-list inset" style="margin-bottom:24px">
+        <a class="as-linkrow" href="https://github.com/smartmaster35rus-dev/Apple-Apps/releases">GitHub Releases</a>
+        <a class="as-linkrow" href="https://smartmaster35rus-activator.ru/app-install/sideload">Витрина на сайте</a>
+        <a class="as-linkrow" href="https://t.me/SmartMaster35Rus">Telegram</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="page-apps" class="as-page" hidden>
+    <header class="as-header">
+      <div class="as-header-top">
+        <div>
+          <p class="as-date">Apps</p>
+          <h1>Приложения</h1>
+        </div>
+        <a class="as-avatar" href="https://smartmaster35rus.ru/">SM</a>
+      </div>
+    </header>
+    <div class="as-scroll">
+      <div class="as-section">
+        <div class="as-section-head"><h2>Charts</h2><span class="as-see" id="appsCount"></span></div>
+        <div class="as-list ranked" id="appsList"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="page-search" class="as-page" hidden>
+    <header class="as-header">
+      <div class="as-header-top">
+        <div>
+          <p class="as-date">Search</p>
+          <h1>Поиск</h1>
+        </div>
+      </div>
+      <form class="as-searchbar" id="searchForm" action="#" method="get">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.5-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input id="search" type="search" placeholder="App Store" autocomplete="off">
+      </form>
+    </header>
+    <div class="as-scroll">
+      <div class="as-list" id="searchList"></div>
+      <div id="searchEmpty" class="as-empty" hidden>Ничего не найдено</div>
+    </div>
+  </div>
+</main>
+
+<nav class="as-tabbar" aria-label="Разделы">
+  <button type="button" class="as-tab on" data-go="today">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    <span>Сегодня</span>
+  </button>
+  <button type="button" class="as-tab" data-go="apps">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="1.6" fill="currentColor"/><rect x="13" y="3" width="8" height="8" rx="1.6" fill="currentColor"/><rect x="3" y="13" width="8" height="8" rx="1.6" fill="currentColor"/><rect x="13" y="13" width="8" height="8" rx="1.6" fill="currentColor"/></svg>
+    <span>Приложения</span>
+  </button>
+  <button type="button" class="as-tab" data-go="search">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.2-3.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    <span>Поиск</span>
+  </button>
+</nav>
+
+<div class="as-sheet" id="sheet" hidden>
+  <div class="as-sheet-bg" data-close="1"></div>
+  <div class="as-sheet-panel">
+    <button type="button" class="as-sheet-close" data-close="1">Закрыть</button>
+    <div class="as-detail" id="detail"></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var CATALOG = {apps:[], base_url:"", release:"ipa"};
+  var pages = {today: document.getElementById("page-today"), apps: document.getElementById("page-apps"), search: document.getElementById("page-search")};
+  function esc(v){ var n=document.createElement("span"); n.textContent=String(v||""); return n.innerHTML; }
+  function attr(v){ return esc(v).replace(/"/g,"&quot;"); }
+  function dl(a){
+    if (a.url) return a.url;
+    var file = (a.file||"").replace(/^\/+/, "");
+    return (CATALOG.base_url||"").replace(/\/$/,"") + (file ? "/"+file : "");
+  }
+  function meta(a){
+    var p=[];
+    if(a.version) p.push(a.version);
+    if(a.min_ios) p.push("iOS "+a.min_ios+"+");
+    if(a.category) p.push(a.category);
+    return p.join(" · ") || "IPA";
+  }
+  function iconHtml(a, letter){
+    letter = letter || esc((a.name||"?").slice(0,1));
+    if(!a.icon) return '<span class="as-icon is-fallback" data-letter="'+letter+'"><span class="as-fallback">'+letter+'</span></span>';
+    return '<span class="as-icon" data-letter="'+letter+'"><img src="icons/'+attr(a.icon)+'" alt="" width="60" height="60" decoding="async" data-fallback="1"></span>';
+  }
+  function bindIcons(root){
+    root.querySelectorAll("img[data-fallback]").forEach(function(img){
+      if(img.dataset.bound) return;
+      img.dataset.bound="1";
+      img.addEventListener("error", function(){
+        img.classList.add("is-broken");
+        var box=img.closest(".as-icon");
+        if(!box || box.querySelector(".as-fallback")) return;
+        box.classList.add("is-fallback");
+        var s=document.createElement("span");
+        s.className="as-fallback";
+        s.textContent=box.getAttribute("data-letter")||"?";
+        box.appendChild(s);
+      });
+    });
+  }
+  function rowHtml(a, rank){
+    var href = attr(dl(a));
+    var r = rank ? '<span class="as-rank">'+rank+'</span>' : '';
+    return '<button type="button" class="as-row" data-id="'+attr(a.id)+'">'+r+iconHtml(a)+
+      '<span class="copy"><span class="name">'+esc(a.name)+'</span><span class="meta">'+esc(meta(a))+'</span></span>'+
+      '<a class="as-get" href="'+href+'" rel="noopener" onclick="event.stopPropagation()">GET</a></button>';
+  }
+  function showPage(name){
+    Object.keys(pages).forEach(function(k){ pages[k].hidden = k!==name; });
+    document.querySelectorAll(".as-tab").forEach(function(t){ t.classList.toggle("on", t.getAttribute("data-go")===name); });
+    if(name==="search") try{ document.getElementById("search").focus(); }catch(e){}
+  }
+  function openApp(id){
+    var a = CATALOG.apps.filter(function(x){ return x.id===id; })[0];
+    if(!a) return;
+    var href = attr(dl(a));
+    document.getElementById("detail").innerHTML =
+      '<div class="as-detail-top">'+iconHtml(a)+'<div><h2>'+esc(a.name)+'</h2><p class="sub">'+esc(a.summary||meta(a))+'</p>'+
+      '<a class="as-get" href="'+href+'" rel="noopener">GET</a></div></div>'+
+      '<div class="as-detail-meta"><div><b>'+esc(a.version||"—")+'</b>Версия</div><div><b>'+esc(a.min_ios||"—")+'</b>iOS</div><div><b>'+esc(a.category||"IPA")+'</b>Категория</div></div>'+
+      '<p class="as-muted" style="padding:16px 0 0">Файл: <code>'+esc(a.file||"—")+'</code><br>Релиз: <a href="https://github.com/smartmaster35rus-dev/Apple-Apps/releases/tag/'+encodeURIComponent(CATALOG.release||"ipa")+'">'+esc(CATALOG.release||"ipa")+'</a></p>';
+    bindIcons(document.getElementById("detail"));
+    document.getElementById("sheet").hidden = false;
+  }
+  function render(){
+    var apps = CATALOG.apps || [];
+    var featured = apps.filter(function(a){ return a.featured; });
+    if(!featured.length) featured = apps.slice(0,3);
+    var first = featured[0] || apps[0];
+    if(first){
+      document.getElementById("storyFeatured").hidden = false;
+      document.getElementById("storyTitle").textContent = first.category || "IPA";
+      document.getElementById("storyText").textContent = first.summary || "";
+      document.getElementById("storyName").textContent = first.name;
+      document.getElementById("storyMeta").textContent = meta(first);
+      document.getElementById("storyGet").href = dl(first);
+      document.getElementById("storyIcon").outerHTML = iconHtml(first);
+      document.getElementById("storyFeatured").setAttribute("data-id", first.id);
+    }
+    document.getElementById("featuredRow").innerHTML = featured.map(function(a){
+      return '<button type="button" class="as-hcard" data-id="'+attr(a.id)+'">'+iconHtml(a)+'<div class="name">'+esc(a.name)+'</div><div class="meta">'+esc(meta(a))+'</div></button>';
+    }).join("");
+    document.getElementById("appsList").innerHTML = apps.map(function(a,i){ return rowHtml(a, i+1); }).join("");
+    document.getElementById("appsCount").textContent = apps.length + " IPA";
+    bindIcons(document.querySelector(".as-app"));
+  }
+  function renderSearch(){
+    var q = (document.getElementById("search").value||"").trim().toLowerCase();
+    var shown = (CATALOG.apps||[]).filter(function(a){
+      return !q || (a.name+" "+(a.category||"")+" "+(a.summary||"")+" "+(a.file||"")).toLowerCase().indexOf(q)>=0;
+    });
+    document.getElementById("searchList").innerHTML = shown.map(function(a){ return rowHtml(a); }).join("");
+    document.getElementById("searchEmpty").hidden = !!shown.length;
+    bindIcons(document.getElementById("searchList"));
+  }
+  document.addEventListener("click", function(e){
+    var go = e.target.closest("[data-go]");
+    if(go){ e.preventDefault(); showPage(go.getAttribute("data-go")); return; }
+    if(e.target.closest("[data-close]")){ document.getElementById("sheet").hidden = true; return; }
+    var card = e.target.closest("[data-id]");
+    if(card && !e.target.closest("a")){ openApp(card.getAttribute("data-id")); }
+  });
+  document.getElementById("searchForm").addEventListener("submit", function(e){ e.preventDefault(); });
+  document.getElementById("search").addEventListener("input", renderSearch);
+  var d=new Date();
+  document.getElementById("todayDate").textContent = d.toLocaleDateString("ru-RU", {weekday:"long", day:"numeric", month:"long"});
+  fetch("apps.json", {cache:"no-store"}).then(function(r){ return r.json(); }).then(function(data){
+    CATALOG = data || CATALOG;
+    render();
+    renderSearch();
+  }).catch(function(){ render(); });
+})();
+</script>
+</body>
+</html>
