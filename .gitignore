@@ -1,5 +1,7 @@
 *.ipa
 *.IPA
+release-ipas/
+docs/apps.build.json
 .DS_Store
 Thumbs.db
 .idea/
